@@ -1,3 +1,145 @@
+/* --- Section Layouts --- */
+.section {
+    width: 100%;
+    max-width: 900px;
+    margin: 60px auto 0 auto;
+    padding: 40px 30px;
+    background: #f8f6fc;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(143,64,218,0.07);
+}
+.section h2 {
+    font-size: 2.2rem;
+    color: #8f40da;
+    margin-bottom: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* --- About Section --- */
+.about-section p {
+    font-size: 1.15rem;
+    color: #333;
+    line-height: 1.7;
+}
+
+/* --- Skills Section --- */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.skills-list li {
+    background: #e7d8fa;
+    color: #8f40da;
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 20px;
+    font-size: 1rem;
+    box-shadow: 0 1px 4px rgba(143,64,218,0.08);
+}
+
+/* --- Portfolio Section --- */
+.portfolio-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 28px;
+    margin-top: 18px;
+}
+.portfolio-item {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(143,64,218,0.08);
+    padding: 18px 14px 22px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s;
+}
+.portfolio-item:hover {
+    box-shadow: 0 4px 24px rgba(143,64,218,0.18);
+}
+.portfolio-item img {
+    width: 100%;
+    max-width: 180px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+}
+.portfolio-item h3 {
+    color: #8f40da;
+    font-size: 1.15rem;
+    margin: 8px 0 6px 0;
+}
+.portfolio-item p {
+    color: #444;
+    font-size: 0.98rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.portfolio-item a {
+    color: #fff;
+    background: #8f40da;
+    padding: 7px 18px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-size: 0.98rem;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+.portfolio-item a:hover {
+    background: #6d2bbd;
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    background: #f3f0fa;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+.contact-form input,
+.contact-form textarea {
+    padding: 10px 14px;
+    border: 1.5px solid #d1b8f7;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    resize: none;
+}
+.contact-form textarea {
+    min-height: 80px;
+    max-width: 100%;
+}
+.contact-form button {
+    background: #8f40da;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 0;
+    font-size: 1.08rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.contact-form button:hover {
+    background: #6d2bbd;
+}
+.contact-info {
+    color: #333;
+    font-size: 1rem;
+}
+.contact-info a {
+    color: #8f40da;
+    text-decoration: underline;
+}
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 *{
@@ -35,7 +177,10 @@ b{
     color: #8f40da;
 }
 body{
-    overflow: hidden;
+    /* allow vertical scrolling so sections below the viewport (like About) are reachable
+       keep horizontal overflow hidden to avoid layout shift */
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .navLinks{
@@ -56,10 +201,26 @@ body{
 .socialIcons a:hover{
     color: #8f40da;
 }
+
+.socialIcons {
+      position: fixed;       /* keeps it in place */
+      top: 50%;              /* center vertically */
+      left: 0;               /* stick to the left */
+      transform: translateY(-50%); /* adjust for perfect centering */
+      display: flex;
+      flex-direction: column;
+      gap: 15px;             /* space between icons */
+      padding: 10px;
+
+}
 .socialIcons a{
+    text-decoration: none; 
     font-size: 30px;
     color: #20262E;
-    margin: 25px 10px;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .wrapper{
     display: flex;
