@@ -58,28 +58,66 @@ function fitElementToParent(el, padding) {
         easing: 'easeInOutCirc',
         delay: anime.stagger(190, {direction: 'reverse'})
       },
-      duration: 2000,
-      delay: anime.stagger(60, {direction: 'reverse'}),
-      easing: 'linear'
-    }, 0);
-  
-    var shadowAnimation = anime({
-        targets: '#sphereGradient',
-        x1: '25%',
-        x2: '25%',
-        y1: '0%',
-        y2: '75%',
-        duration: 30000,
-        easing: 'easeOutQuint',
-        autoplay: false
-      }, 0);
-  
-    function init() {
+
+    });
+
+    // Play animations on DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', function() {
       introAnimation.play();
       breathAnimation.play();
-      shadowAnimation.play();
-    }
-    
-    init();
-  
-  })();
+    });
+
+})();
+
+// --- Portfolio Section ---
+const portfolioData = [
+  {
+    title: 'Personal Blog',
+    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80',
+    description: 'A modern blog built with React and Node.js.',
+    link: '#'
+  },
+  {
+    title: 'Art Gallery',
+    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80',
+    description: 'A portfolio site to showcase my digital art.',
+    link: '#'
+  },
+  {
+    title: 'Weather App',
+    image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80',
+    description: 'A simple weather app using OpenWeatherMap API.',
+    link: '#'
+  },
+  {
+    title: 'Task Manager',
+    image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80',
+    description: 'A productivity tool to manage daily tasks.',
+    link: '#'
+  }
+];
+
+function renderPortfolio() {
+  const portfolioList = document.getElementById('portfolio-list');
+  if (!portfolioList) return;
+  portfolioList.innerHTML = portfolioData.map(item => `
+    <div class="portfolio-item">
+      <img src="${item.image}" alt="${item.title}" />
+      <h3>${item.title}</h3>
+      <p>${item.description}</p>
+      <a href="${item.link}" target="_blank">View Project</a>
+    </div>
+  `).join('');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  renderPortfolio();
+  // Contact form event
+  const contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for reaching out!');
+    });
+  }
+});
