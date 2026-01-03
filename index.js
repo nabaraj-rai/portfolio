@@ -71,47 +71,26 @@ function fitElementToParent(el, padding) {
 
 // --- Portfolio Section ---
 const portfolioData = [
-  {
-    title: 'Personal Blog',
-    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80',
-    description: 'A modern blog built with React and Node.js.',
-    link: '#'
-  },
-  {
-    title: 'Art Gallery',
-    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80',
-    description: 'A portfolio site to showcase my digital art.',
-    link: '#'
-  },
-  {
-    title: 'Weather App',
-    image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80',
-    description: 'A simple weather app using OpenWeatherMap API.',
-    link: '#'
-  },
-  {
-    title: 'Task Manager',
-    image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80',
-    description: 'A productivity tool to manage daily tasks.',
-    link: '#'
-  }
+  { image: '/assets/portfolio/fogpriestess.png', alt: 'Fog Priestess' },
+  { image: '/assets/portfolio/landscape1.png', alt: 'Landscape 1' },
+  { image: '/assets/portfolio/landscape2.png', alt: 'Landscape 2' },
+  { image: '/assets/portfolio/landscape3.png', alt: 'Landscape 3' }
 ];
 
 function renderPortfolio() {
-  const portfolioList = document.getElementById('portfolio-list');
-  if (!portfolioList) return;
-  portfolioList.innerHTML = portfolioData.map(item => `
-    <div class="portfolio-item">
-      <img src="${item.image}" alt="${item.title}" />
-      <h3>${item.title}</h3>
-      <p>${item.description}</p>
-      <a href="${item.link}" target="_blank">View Project</a>
-    </div>
-  `).join('');
+  const portfolioGrid = document.getElementById('portfolio-grid');
+  if (!portfolioGrid) return;
+  
+  portfolioGrid.innerHTML = portfolioData.map((item, index) => 
+    `<div class="portfolio-item">
+      <img src="${item.image}" alt="${item.alt}" />
+    </div>`
+  ).join('');
 }
 
 document.addEventListener('DOMContentLoaded', function() {
   renderPortfolio();
+  
   // Contact form event
   const contactForm = document.querySelector('.contact-form');
   if (contactForm) {
