@@ -58,28 +58,63 @@ function fitElementToParent(el, padding) {
         easing: 'easeInOutCirc',
         delay: anime.stagger(190, {direction: 'reverse'})
       },
-      duration: 2000,
-      delay: anime.stagger(60, {direction: 'reverse'}),
-      easing: 'linear'
-    }, 0);
-  
-    var shadowAnimation = anime({
-        targets: '#sphereGradient',
-        x1: '25%',
-        x2: '25%',
-        y1: '0%',
-        y2: '75%',
-        duration: 30000,
-        easing: 'easeOutQuint',
-        autoplay: false
-      }, 0);
-  
-    function init() {
+
+    });
+
+    // Play animations on DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', function() {
       introAnimation.play();
       breathAnimation.play();
-      shadowAnimation.play();
-    }
-    
-    init();
+    });
+
+})();
+
+// --- Portfolio Section ---
+const portfolioData = [
+  { image: '/assets/portfolio/fog.png', alt: 'Fog Priestess' },
+  { image: '/assets/portfolio/landscape1.png', alt: 'Landscape 1' },
+  { image: '/assets/portfolio/landscape2.png', alt: 'Landscape 2' },
+  { image: '/assets/portfolio/abstract.png', alt: 'Abstract' },
+  { image: '/assets/portfolio/armor.png', alt: 'Armor' },
+  { image: '/assets/portfolio/atmaranjan.jpg', alt: 'Atmaranjan' },
+  { image: '/assets/portfolio/beach.png', alt: 'Beach' },
+  { image: '/assets/portfolio/c1.png', alt: 'Couple 1' },
+  { image: '/assets/portfolio/c2.png', alt: 'Couple 2' },
+  { image: '/assets/portfolio/cats.png', alt: 'Cats' },
+  { image: '/assets/portfolio/db.png', alt: 'Deathbed' },
+  { image: '/assets/portfolio/eye.png', alt: 'Eye' },
+  { image: '/assets/portfolio/gw.png', alt: 'Girl' },
+  { image: '/assets/portfolio/lghts.png', alt: 'Lights' },
+  { image: '/assets/portfolio/pause.png', alt: 'Pauseart' },
+  { image: '/assets/portfolio/RDD.jpg', alt: 'RDD' },
+  { image: '/assets/portfolio/roses.png', alt: 'Roses' },
+  { image: '/assets/portfolio/stars.png', alt: 'Stars' },
+  { image: '/assets/portfolio/Tangerine.png', alt: 'Tangerine' },
+  { image: '/assets/portfolio/window.png', alt: 'Window' },
+  { image: '/assets/portfolio/winter.png', alt: 'Winter' },
+  { image: '/assets/portfolio/landscape3.png', alt: 'Landscape 3' }
+];
+
+function renderPortfolio() {
+  const portfolioGrid = document.getElementById('portfolio-grid');
+  if (!portfolioGrid) return;
   
-  })();
+  portfolioGrid.innerHTML = portfolioData.map((item, index) => 
+    `<div class="portfolio-item">
+      <img src="${item.image}" alt="${item.alt}" />
+    </div>`
+  ).join('');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  renderPortfolio();
+  
+  // Contact form event
+  const contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for reaching out!');
+    });
+  }
+});
