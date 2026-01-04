@@ -71,9 +71,27 @@ function fitElementToParent(el, padding) {
 
 // --- Portfolio Section ---
 const portfolioData = [
-  { image: '/assets/portfolio/fogpriestess.png', alt: 'Fog Priestess' },
+  { image: '/assets/portfolio/fog.png', alt: 'Fog Priestess' },
   { image: '/assets/portfolio/landscape1.png', alt: 'Landscape 1' },
   { image: '/assets/portfolio/landscape2.png', alt: 'Landscape 2' },
+  { image: '/assets/portfolio/abstract.png', alt: 'Abstract' },
+  { image: '/assets/portfolio/armor.png', alt: 'Armor' },
+  { image: '/assets/portfolio/atmaranjan.jpg', alt: 'Atmaranjan' },
+  { image: '/assets/portfolio/beach.png', alt: 'Beach' },
+  { image: '/assets/portfolio/c1.png', alt: 'Couple 1' },
+  { image: '/assets/portfolio/c2.png', alt: 'Couple 2' },
+  { image: '/assets/portfolio/cats.png', alt: 'Cats' },
+  { image: '/assets/portfolio/db.png', alt: 'Deathbed' },
+  { image: '/assets/portfolio/eye.png', alt: 'Eye' },
+  { image: '/assets/portfolio/gw.png', alt: 'Girl' },
+  { image: '/assets/portfolio/lghts.png', alt: 'Lights' },
+  { image: '/assets/portfolio/pause.png', alt: 'Pauseart' },
+  { image: '/assets/portfolio/RDD.jpg', alt: 'RDD' },
+  { image: '/assets/portfolio/roses.png', alt: 'Roses' },
+  { image: '/assets/portfolio/stars.png', alt: 'Stars' },
+  { image: '/assets/portfolio/Tangerine.png', alt: 'Tangerine' },
+  { image: '/assets/portfolio/window.png', alt: 'Window' },
+  { image: '/assets/portfolio/winter.png', alt: 'Winter' },
   { image: '/assets/portfolio/landscape3.png', alt: 'Landscape 3' }
 ];
 

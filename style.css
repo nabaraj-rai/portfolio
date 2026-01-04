@@ -59,7 +59,7 @@ font-size: 4.8rem;
     color: #333;
     font-size: 2.2rem;
     font-weight: 700;
-    text-transform: none;
+    text-transform: capitalize;
     letter-spacing: 0;
 }
 
@@ -352,7 +352,7 @@ font-size: 4.8rem;
 
 /* --- Contact Section --- */
 .contact-section {
-    background: #f3f0fa;
+    background: #f8f8f8;
 }
 .contact-form {
     display: flex;
@@ -363,7 +363,7 @@ font-size: 4.8rem;
 .contact-form input,
 .contact-form textarea {
     padding: 10px 14px;
-    border: 1.5px solid #d1b8f7;
+    border: 1.5px solid #20262E;
     border-radius: 8px;
     font-size: 1rem;
     outline: none;
@@ -374,26 +374,36 @@ font-size: 4.8rem;
     max-width: 100%;
 }
 .contact-form button {
-    background: #8f40da;
-    color: #fff;
-    border: none;
+    color: #20262E;
+    border: 1px solid #20262E;
     border-radius: 8px;
-    padding: 10px 0;
+    padding: 10px;
     font-size: 1.08rem;
-    font-weight: 600;
+    font-weight: bold;
     cursor: pointer;
     transition: background 0.2s;
+    margin: 1rem 20rem;
+    
+    /* margin-top: 12px;
+    padding: 12px 24px; */
+    text-decoration: none;
 }
 .contact-form button:hover {
-    background: #6d2bbd;
+    color: #8f40da;
+    border: 1px dotted #8f40da;
 }
 .contact-info {
     color: #333;
     font-size: 1rem;
 }
 .contact-info a {
+    color: #333;
+    text-decoration: none;
+}
+.contact-info a:hover{
     color: #8f40da;
     text-decoration: underline;
+
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
